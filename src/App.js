@@ -1,13 +1,16 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
-import Contact from "./components/pages/Contact";
-import Company from "./components/pages/Company";
-import NewProject from "./components/pages/NewProject";
-import Projects from "./components/pages/Projects";
 
-import Container from "./components/layout/Container";
-import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+import Home from './components/pages/Home/Home';
+import Projects from './components/pages/Projects/Projects';
+import Company from './components/pages/Company/Company';
+import Contact from './components/pages/Contact/Contact';
+
+import NewProject from './components/pages/NewProject/NewProject';
+import Container from "./components/layout/Container/Container";
+import Navbar from "./components/layout/Navbar/Navbar";
+import Footer from "./components/layout/Footer/Footer";
+
+
 
 function App() {
   return (
