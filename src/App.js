@@ -15,7 +15,7 @@ function App() {
       <Navbar />
 
       <Switch>
-        <Container custmClass="min-height">
+        <Container customClass="min-height">
           <Route exact path="/">
             <Home />
           </Route>
