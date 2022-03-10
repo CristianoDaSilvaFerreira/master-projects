@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Master Projetos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![home.png](/home/cristiano/Imagens/Prints/master-project/home.png)
 
-## Available Scripts
+> Aqui você poderá gerenciar seus projetos de forma escalável e controlar os serviços dele
 
-In the project directory, you can run:
+## Criação do projeto
 
-### `npm start`
+```bash
+npx create-react-app master-project
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![estrutura-inicial.png](/home/cristiano/Imagens/Prints/master-project/estrutura-inicial.png)
 
-### `npm test`
+### Instalado bibliotecas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install json-server react-icons react-router-dom uuid
+```
 
-### `npm run build`
+-  **json-server**: será responsável pelo o back-end "fake", onde irá receber e enviar dados da API;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **react-icons**: é uma biblioteca com vários ícones para usar no projeto de forma grátis;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **react-router-dom**: é a biblioteca padrão para que consiga fazer o roteamento das páginas de forma que a aplicação seja dinâmica;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **uuid**: é um identificar exclusivo e único para;
 
-### `npm run eject`
+Depois da instalação das bibliotecas fazer uma limpeza no projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![limpeza.png](/home/cristiano/Imagens/Prints/master-project/limpeza.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Adicionando imagens do projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* Criar uma pasta dentro de **src** com nome **img** e nela colocar as imagens do prjeto
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Dentro da pasta **public** excluir o `favicon.ico` e adicionar o `favicon.ico` do logo do projeto
 
-## Learn More
+![estrutura-alterada.png](/home/cristiano/Imagens/Prints/master-project/estrutura-alterada.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Criando o Back-End com Json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Na raiz do projeto criar um arquivo `db.json` com a seguinte estrutura:
 
-### Analyzing the Bundle Size
+```json
+{
+    "projects": [],
+    "categories": [{
+            "id": 1,
+            "name": "Infra"
+        },
+        {
+            "id": 2,
+            "name": "Desenvolvimento"
+        },
+        {
+            "id": 3,
+            "name": "Design"
+        },
+        {
+            "id": 4,
+            "name": "Planejamento"
+        }
+    ]
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Em `package.json` criar um novo script para acessa a API:
 
-### Making a Progressive Web App
+```json
+"backend": "json-server --watch db.json --port 5000",
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Na qual o `watch` estará monitorando as mudanças no projeto e `--port 5000` será a nova porta que irá abri
 
-### Advanced Configuration
+*  No browser abri o endereço <a href="http://localhost:5000/categories" target="_blank">http://localhost:5000/categories</a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+#### Observação: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Projeto todo criando baseado em componentes, não estará sendo informado nesse `README.md` o passo-a-passo de criação de cada parte, mas sim já implementado. 
